@@ -3,3 +3,5 @@ torch
 transformers
 pythainlp
 numpy
+sentencepiece
+protobuf
