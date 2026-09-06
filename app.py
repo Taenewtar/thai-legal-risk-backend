@@ -42,9 +42,9 @@ AUGMENTED_PATH = PROJECT_PATH / "train_dataset_augmented.csv"
 COLLECTED_FIELDS = ["timestamp", "text", "predicted_class", "confidence", "extracted_keywords"]
 AUGMENTED_FIELDS = ["timestamp", "user_text", "predicted_sections", "correct_label"]
 
-
-@st.cache_resource(show_spinner="กำลังดาวน์โหลดและโหลด WangchanBERTa จาก Hugging Face Hub...")
+@st.cache_resource(show_spinner="กำลังดาวน์โหลดโมเดลจาก Hugging Face Hub...")
 def load_huggingface_model():
+    # กำหนดชื่อ ID โมเดล WangchanBERTa แบบถูกต้อง 100%
     base_model_name = "airesearch/wangchanberta-base-att-spm-thaigpt2"
     
     tokenizer = AutoTokenizer.from_pretrained(base_model_name)
@@ -57,8 +57,6 @@ def load_huggingface_model():
     )
     model.eval()
     return tokenizer, model
-
-
 tokenizer, model = load_huggingface_model()
 
 
