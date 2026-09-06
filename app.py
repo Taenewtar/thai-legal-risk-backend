@@ -45,7 +45,7 @@ AUGMENTED_FIELDS = ["timestamp", "user_text", "predicted_sections", "correct_lab
 
 @st.cache_resource(show_spinner="กำลังดาวน์โหลดและโหลด WangchanBERTa จาก Hugging Face Hub...")
 def load_huggingface_model():
-    base_model_name = "airesearch/wangchanberta-base-att-spm-thaigpt2"
+    base_model_name = "pythainlp/wangchanberta-base-att-spm-thaigpt2"
     
     tokenizer = AutoTokenizer.from_pretrained(base_model_name)
     model = AutoModelForSequenceClassification.from_pretrained(
